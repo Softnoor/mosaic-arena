@@ -1,18 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/mosaic-arena/assets/favicon-wOhtjs0q.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mosaic Arena</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
       body {
-        background: #0F172A;
-        background-image: linear-gradient(to bottom right, #0F172A, #1E1B4B, #312E81);
-        color: #F9FAFB;
+        background: #0f172a;
+        background-image: linear-gradient(
+          to bottom right,
+          #0f172a,
+          #1e1b4b,
+          #312e81
+        );
+        color: #f9fafb;
       }
       .bg-shapes {
         position: fixed;
@@ -34,24 +42,95 @@
         bottom: -150px;
         border-radius: 8px;
       }
-      .bg-shapes span:nth-child(1) { left: 25%; width: 80px; height: 80px; animation-delay: 0s; }
-      .bg-shapes span:nth-child(2) { left: 10%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 12s; }
-      .bg-shapes span:nth-child(3) { left: 70%; width: 20px; height: 20px; animation-delay: 4s; }
-      .bg-shapes span:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 18s; }
-      .bg-shapes span:nth-child(5) { left: 65%; width: 20px; height: 20px; animation-delay: 0s; }
-      .bg-shapes span:nth-child(6) { left: 75%; width: 110px; height: 110px; animation-delay: 3s; }
-      .bg-shapes span:nth-child(7) { left: 35%; width: 150px; height: 150px; animation-delay: 7s; }
-      .bg-shapes span:nth-child(8) { left: 50%; width: 25px; height: 25px; animation-delay: 15s; animation-duration: 45s; }
-      .bg-shapes span:nth-child(9) { left: 20%; width: 15px; height: 15px; animation-delay: 2s; animation-duration: 35s; }
-      .bg-shapes span:nth-child(10) { left: 85%; width: 150px; height: 150px; animation-delay: 0s; animation-duration: 11s; }
-      @keyframes animate {
-        0% { transform: translateY(0) rotate(0deg); opacity: 1; border-radius: 20%; }
-        100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; border-radius: 50%; }
+      .bg-shapes span:nth-child(1) {
+        left: 25%;
+        width: 80px;
+        height: 80px;
+        animation-delay: 0s;
       }
-      .perspective-1000 { perspective: 1000px; }
-      .transform-style-3d { transform-style: preserve-3d; }
-      .backface-hidden { backface-visibility: hidden; }
-      .rotate-y-180 { transform: rotateY(180deg); }
+      .bg-shapes span:nth-child(2) {
+        left: 10%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 2s;
+        animation-duration: 12s;
+      }
+      .bg-shapes span:nth-child(3) {
+        left: 70%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 4s;
+      }
+      .bg-shapes span:nth-child(4) {
+        left: 40%;
+        width: 60px;
+        height: 60px;
+        animation-delay: 0s;
+        animation-duration: 18s;
+      }
+      .bg-shapes span:nth-child(5) {
+        left: 65%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 0s;
+      }
+      .bg-shapes span:nth-child(6) {
+        left: 75%;
+        width: 110px;
+        height: 110px;
+        animation-delay: 3s;
+      }
+      .bg-shapes span:nth-child(7) {
+        left: 35%;
+        width: 150px;
+        height: 150px;
+        animation-delay: 7s;
+      }
+      .bg-shapes span:nth-child(8) {
+        left: 50%;
+        width: 25px;
+        height: 25px;
+        animation-delay: 15s;
+        animation-duration: 45s;
+      }
+      .bg-shapes span:nth-child(9) {
+        left: 20%;
+        width: 15px;
+        height: 15px;
+        animation-delay: 2s;
+        animation-duration: 35s;
+      }
+      .bg-shapes span:nth-child(10) {
+        left: 85%;
+        width: 150px;
+        height: 150px;
+        animation-delay: 0s;
+        animation-duration: 11s;
+      }
+      @keyframes animate {
+        0% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 1;
+          border-radius: 20%;
+        }
+        100% {
+          transform: translateY(-1000px) rotate(720deg);
+          opacity: 0;
+          border-radius: 50%;
+        }
+      }
+      .perspective-1000 {
+        perspective: 1000px;
+      }
+      .transform-style-3d {
+        transform-style: preserve-3d;
+      }
+      .backface-hidden {
+        backface-visibility: hidden;
+      }
+      .rotate-y-180 {
+        transform: rotateY(180deg);
+      }
 
       /* Lock/Stone Texture Pattern */
       .pattern-lock {
@@ -67,32 +146,33 @@
     </style>
 
 
-  <script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.553.0",
-    "@reduxjs/toolkit": "https://aistudiocdn.com/@reduxjs/toolkit@^2.10.1",
-    "react-redux": "https://aistudiocdn.com/react-redux@^9.2.0",
-    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
-    "canvas-confetti": "https://aistudiocdn.com/canvas-confetti@^1.9.3",
-    "react-hook-form": "https://aistudiocdn.com/react-hook-form@^7.51.3",
-    "zod": "https://aistudiocdn.com/zod@^3.22.4",
-    "@hookform/resolvers/zod": "https://aistudiocdn.com/@hookform/resolvers@^3.3.4/zod",
-    "@hookform/resolvers/": "https://aistudiocdn.com/@hookform/resolvers@^5.2.2/",
-    "framer-motion": "https://aistudiocdn.com/framer-motion@^11.0.8"
-  }
-}
-</script>
-  <script type="module" crossorigin src="/mosaic-arena/assets/index-ChOwugCg.js"></script>
-  <link rel="stylesheet" crossorigin href="/mosaic-arena/assets/index-Bjsxw8l8.css">
-</head>
+    <script type="importmap">
+      {
+        "imports": {
+          "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+          "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
+          "react/": "https://aistudiocdn.com/react@^19.2.0/",
+          "react": "https://aistudiocdn.com/react@^19.2.0",
+          "lucide-react": "https://aistudiocdn.com/lucide-react@^0.553.0",
+          "@reduxjs/toolkit": "https://aistudiocdn.com/@reduxjs/toolkit@^2.10.1",
+          "react-redux": "https://aistudiocdn.com/react-redux@^9.2.0",
+          "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
+          "canvas-confetti": "https://aistudiocdn.com/canvas-confetti@^1.9.3",
+          "react-hook-form": "https://aistudiocdn.com/react-hook-form@^7.51.3",
+          "zod": "https://aistudiocdn.com/zod@^3.22.4",
+          "@hookform/resolvers/zod": "https://aistudiocdn.com/@hookform/resolvers@^3.3.4/zod",
+          "@hookform/resolvers/": "https://aistudiocdn.com/@hookform/resolvers@^5.2.2/",
+          "framer-motion": "https://aistudiocdn.com/framer-motion@^11.0.8"
+        }
+      }
+    </script>
+    <script type="module" crossorigin src="/mosaic-arena/assets/index-Bg7HPU_w.js"></script>
+    <link rel="stylesheet" crossorigin href="/mosaic-arena/assets/index-Bb1Ua8TG.css">
+  </head>
   <body>
     <div class="bg-shapes">
-      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span
+      ><span></span><span></span><span></span><span></span><span></span>
     </div>
     <div id="root" class="relative min-h-screen"></div>
   </body>
